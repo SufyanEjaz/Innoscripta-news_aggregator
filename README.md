@@ -21,13 +21,6 @@ Welcome to the **News Aggregator Application**. This project combines a **React.
 
 ## Technologies Used
 
-- **Frontend:**
-  - React.js
-  - Axios
-  - React Router
-  - SCSS
-  - Docker
-
 - **Backend:**
   - Laravel 11
   - Composer
