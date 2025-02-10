@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "f9ced1de-fdf9-4a17-8de6-f1e424fc5b5c",
+		"name": "Innoscripta-2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13913155"
+	},
+	"item": [
+		{
+			"name": "Fetch All Articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|ipF5Ak9aaX5ALHpnkIGnLHaUQUXZx0nGtrsyYY7J48ed2d54"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/articles?keyword=Trump&category=3,4,5&source=1&date=2025-02-9&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Trump"
+						},
+						{
+							"key": "category",
+							"value": "3,4,5"
+						},
+						{
+							"key": "source",
+							"value": "1"
+						},
+						{
+							"key": "date",
+							"value": "2025-02-9"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|ipF5Ak9aaX5ALHpnkIGnLHaUQUXZx0nGtrsyYY7J48ed2d54"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/articles/22"
+			},
+			"response": []
+		},
+		{
+			"name": "Get LoggedIn User Preferences",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|ipF5Ak9aaX5ALHpnkIGnLHaUQUXZx0nGtrsyYY7J48ed2d54"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/preferences"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories, Authors, Sources",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|ipF5Ak9aaX5ALHpnkIGnLHaUQUXZx0nGtrsyYY7J48ed2d54"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/preferences/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Create/Update Preference",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|ipF5Ak9aaX5ALHpnkIGnLHaUQUXZx0nGtrsyYY7J48ed2d54"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sources[]",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "sources[]",
+							"value": "124",
+							"type": "text"
+						},
+						{
+							"key": "authors[]",
+							"value": "ABC News",
+							"type": "text"
+						},
+						{
+							"key": "authors[]",
+							"value": "Abner Li",
+							"type": "text"
+						},
+						{
+							"key": "categories[]",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "categories[]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "categories[]",
+							"value": "12",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/preferences"
+			},
+			"response": []
+		}
+	]
+}
